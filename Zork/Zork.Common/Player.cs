@@ -20,15 +20,16 @@ namespace Zork.Common
         public Room Location { get; private set; }
 
 
+
         public int Moves { get; set; }
 
-        public int ZorkMoves
+        public int MovePoints
         {
             get => mMove;
             set
             {
                 mMove = value;
-                //MoveChanged?.Invoke(this, mMove);
+                MoveChanged?.Invoke(this, mMove);
 
             }
 
@@ -74,7 +75,7 @@ namespace Zork.Common
             if (isValidMove)
             {
                 Location = destination;
-                ZorkMoves++;
+                MovePoints++;
             }
 
             return isValidMove;

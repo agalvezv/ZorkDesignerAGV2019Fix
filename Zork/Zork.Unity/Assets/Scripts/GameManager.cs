@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         Game = Game.Load(gameFileAsset.text, OutputService, InputService);
 
         //ScoreText.text = $"Score: {Game.Player.Score}";
-        MovesText.text = $"Moves: {Game.Player.ZorkMoves}";
+        //MovesText.text = $"Moves: {Game.Player.ZorkMoves}";
         LocationText.text = $"Location: {Game.Player.Location}";
         Game.Player.ScoreChanged += Score_Changed;
         Game.Player.MoveChanged += Move_Changed;
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
                 Game.Output.WriteLine($">{InputService.InputField.text}");
                 InputService.ProcessInput();
                 //ScoreText.text = $"Score: {Game.Player.Score}";
-                MovesText.text = $"Moves: {Game.Player.ZorkMoves}";
+                //MovesText.text = $"Moves: {Game.Player.ZorkMoves}";
                
                 LocationText.text = $"Location: {Game.Player.Location}";
 
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     private void Move_Changed(object sender, int e)
     {
-        //MovesText.text = $"Score: {Game.Player.ZorkMoves}";
+        MovesText.text = $"Moves: {Game.Player.MovePoints}";
 
     }
     private void Score_Changed(object sender, int e)
